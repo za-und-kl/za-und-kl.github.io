@@ -1,1 +1,1 @@
-# cellular-automata-and-artificial-life
+# Zelluläre Automaten und Künstliches Leben
