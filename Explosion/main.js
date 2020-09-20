@@ -3,6 +3,7 @@ var nextGrid = [];
 
 function setup() {
   createCanvas(200, 200);
+  frameRate(300);
   for (let i = 0; i < width; i++){
     print(i);
     grid[i] = [];
@@ -15,7 +16,7 @@ function setup() {
       grid[i][j] = 1;
     }
   }
-  nextGrid = grid;
+  nextGrid = arrayClone(grid);
   print(nextGrid);
 }
 
@@ -25,38 +26,24 @@ function draw() {
 }
 
 function check() {
-  nextGrid = grid;
-  for(let i = 0; i < width; i++){
-    for(let j = 0; j < height; j++){
+  nextGrid = arrayClone(grid);
+  for(let i = 1; i < width-1; i++){
+    for(let j = 1; j < height-1; j++){
+
       let neighboors = [];
-      if(j < height-1){
-        neighboors.push(grid[i][j+1]);
-        if(i < width-1){
-          neighboors.push(grid[i+1][j+1]);
+
+      for(let x = -1; x < 2; x++){
+        for(let y = -1; y < 2; y++){
+          neighboors.push(grid[i+x][j+y]);
         }
       }
-      if(i < width-1){
-        neighboors.push(grid[i+1][j]);
-        if(j > 0){
-          neighboors.push(grid[i+1][j-1]);
-        }
-      }
-      if(j > 0){
-        neighboors.push(grid[i][j-1]);
-        if(i > 0){
-          neighboors.push(grid[i-1][j-1]);
-        }
-      }
-      if(i > 0){
-        neighboors.push(grid[i-1][j]);
-        if(j < height-1){
-          neighboors.push(grid[i-1][j+1]);
-        }
-      }
+
+      neighboors.splice(4, 1)
+
       nextGrid[i][j] = random(neighboors);
     }
   }
-  grid = nextGrid;
+  grid = arrayClone(nextGrid);
 }
 
 function render() {
@@ -70,4 +57,22 @@ function render() {
       point(i,j);
     }
   }
+}
+
+function arrayClone( arr ) {
+
+    let i, copy;
+
+    if( Array.isArray( arr ) ) {
+        copy = arr.slice( 0 );
+        for( i = 0; i < copy.length; i++ ) {
+            copy[ i ] = arrayClone( copy[ i ] );
+        }
+        return copy;
+    } else if( typeof arr === 'object' ) {
+        throw 'Cannot clone array containing an object!';
+    } else {
+        return arr;
+    }
+
 }
