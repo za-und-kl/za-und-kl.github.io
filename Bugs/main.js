@@ -13,7 +13,7 @@ function render() {
 	background(255);
 	for(let b of bugs) {
 		b.show();
-		b.move();
+  		b.move();
 	}
 }
 
