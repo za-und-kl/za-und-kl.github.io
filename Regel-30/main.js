@@ -1,8 +1,12 @@
 var grid = [];
 var nextGrid = [];
+var rules = [];
 
 function setup() {
   createCanvas(300, 129);
+
+  //rules = [0, 1, 1, 1, 1, 0, 0, 0]
+  rules = [0, 0, 0, 1, 1, 1, 1, 0]
 
   for(let i = 0; i < width; i++) {
     grid[i] = 0;
@@ -33,14 +37,11 @@ function render() {
 function check() {
   nextGrid = [...grid];
   for(let i = 1; i < width-1; i++) {
-    let neighborCount = 0;
-    neighborCount += grid[i-1];
-    neighborCount += grid[i+1];
-    if(neighborCount == 1){
-      nextGrid[i] = 1;
-    } else {
-      nextGrid[i] = 0;
-    }
+    let neighbours = '';
+    neighbours += grid[i-1];
+    neighbours += grid[i];
+    neighbours += grid[i+1];
+    nextGrid[i] = rules[7 - parseInt(neighbours, 2)]
   }
   grid = [...nextGrid];
 }
