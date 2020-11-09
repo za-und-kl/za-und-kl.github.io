@@ -1,5 +1,11 @@
 var grid = [];
 
+var b = 1.2;
+var t = 1.2;
+var r = 1;
+var p = 0;
+var s = 0;
+
 function setup() {
   createCanvas(200, 200);
   frameRate(30);
