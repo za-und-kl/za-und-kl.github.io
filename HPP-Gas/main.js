@@ -1,33 +1,21 @@
 var grid;
 var nextGrid = [];
 
+var waveButton;
+var doppelspalt1Button;
+var doppelspalt2Button;
+
 function setup() {
 
-  doppelspalt();
+  createWave();
 
-  /*for (let i = 100; i < 102; i++){
-    for(let j = 0; j < height-2; j++){
-      grid[i][j] = 2;
-    }
-  }
-  for (let i = 100; i < 102; i++){
-    for(let j = 80; j < 120; j++){
-      grid[i][j] = 1;
-    }
-    for(let j = 110; j < 120; j++){
-      grid[i][j] = 0;
-    }
-  }*/
-  /*for (let i = 0; i < 60; i++){
-    for(let j = 0; j < 60; j++){
-      grid[i][j] = false;
-    }
-  }
-  for (let i = 138; i < 198; i++){
-    for(let j = 138; j < 198; j++){
-      grid[i][j] = false;
-    }
-  }*/
+  waveButton = createButton("Welle");
+  waveButton.mouseClicked(createWave);
+  doppelspalt1Button = createButton("Doppelspalt 1");
+  doppelspalt1Button.mouseClicked(doppelspalt1);
+  doppelspalt2Button = createButton("Doppelspalt 2");
+  doppelspalt2Button.mouseClicked(doppelspalt2);
+
   nextGrid = arrayClone(grid);
 }
 
@@ -158,7 +146,38 @@ function createWave() {
   }
 }
 
-function doppelspalt() {
+function doppelspalt1() {
+  createCanvas(400, 200);
+  grid = new Array(width);
+  for (let i = 0; i < width; i++){
+    grid[i] = new Array(height);
+    for(let j = 0; j < height; j++){
+      grid[i][j] = 0;
+    }
+  }
+  fillRandom();
+
+  for (let i = width/2-2; i < width/2; i++){
+    for(let j = 0; j < (height-2)/2-30; j++){
+      grid[i][j] = 2;
+    }
+    for(let j = (height-2)/2-20; j < (height-2)/2+20; j++){
+      grid[i][j] = 2;
+    }
+    for(let j = (height-2)/2+30; j < height-2; j++){
+      grid[i][j] = 2;
+    }
+  }
+
+
+  for (let i = 75; i < 125; i++){
+    for(let j = 75; j < 125; j++){
+      grid[i][j] = 1;
+    }
+  }
+}
+
+function doppelspalt2() {
   createCanvas(400, 200);
   grid = new Array(width);
   for (let i = 0; i < width; i++){

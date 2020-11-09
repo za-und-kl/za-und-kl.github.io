@@ -1,6 +1,9 @@
 var grid;
 var nextGrid = [];
 
+var randomButton;
+var gliderButton;
+
 function setup() {
   createCanvas(200, 200);
   grid = new Array(width);
@@ -14,6 +17,12 @@ function setup() {
   }
   gliderCanon();
   //fillRandom();
+
+  randomButton = createButton("Zuällig");
+  gliderButton = createButton("Gleiterkanone");
+  randomButton.mouseClicked(fillRandom);
+  gliderButton.mouseClicked(gliderCanon);
+
 
   nextGrid = arrayClone(grid);
 }
@@ -71,6 +80,16 @@ function render() {
 }
 
 function clear() {
+  for (let i = 0; i < width; i++){
+    for(let j = 0; j < height; j++){
+      grid[i][j] = 0;
+    }
+  }
+  for (let i = 0; i < width; i++){
+    for(let j = 0; j < height; j++){
+      nextGrid[i][j] = 0;
+    }
+  }
 }
 
 function fillRandom() {
@@ -82,6 +101,12 @@ function fillRandom() {
 }
 
 function gliderCanon() {
+  for (let i = 0; i < width; i++){
+    for(let j = 0; j < height; j++){
+      grid[i][j] = 0;
+    }
+  }
+
   let x = 10;
   let y = 10;
 
