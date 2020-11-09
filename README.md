@@ -6,8 +6,9 @@
 - 2.3 [Regel 30](./Regel-30)
 - 2.4 [Das HPP-Gas](./HPP-Gas)
 - 2.5 [Conways Spiel des Lebens](./LIFE)
+- 3.1 [ANTS *](https://github.com/jufo-ameisen-2019/ants-simulator)
 - 3.3 [Evolution im Gefangenendilemma](./Gefangenendilemma)
 
 ### [Quellcode](https://github.com/za-und-kl/za-und-kl.github.io)
-### [ANTS](https://github.com/jufo-ameisen-2019/ants-simulator)
+##### * Nur Quelltext abrufbar, da keine webapp
 
