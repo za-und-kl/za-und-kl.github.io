@@ -11,5 +11,5 @@
 
 ## [Quelltext](https://github.com/za-und-kl/za-und-kl.github.io)
 
-¹ Nur Quelltext abrufbar, da keine webapp
+¹ Nur Quelltext abrufbar, da keine Webapp
 
