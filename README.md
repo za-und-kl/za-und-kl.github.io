@@ -1,4 +1,4 @@
-# Zelluläre Automaten und Künstliches Leben
+# Zelluläre Automaten und Künstliches Leben - Anhang
 ## W-Seminar 2020 von Bruno Trautsch
 ### Beispiele:
 - 2.1 [Explosion](./Explosion)
