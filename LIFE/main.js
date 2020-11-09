@@ -15,8 +15,8 @@ function setup() {
       grid[i][j] = 0;
     }
   }
-  gliderCanon();
-  //fillRandom();
+  //gliderCanon();
+  fillRandom();
 
   randomButton = createButton("Zuällig");
   gliderButton = createButton("Gleiterkanone");
