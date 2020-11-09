@@ -1,6 +1,6 @@
 # Zelluläre Automaten und Künstliches Leben
 ## W-Seminar 2020 von Bruno Trautsch
-### Beispiele
+### Beispiele:
 - 2.1 [Explosion](./Explosion)
 - 2.2 [Das Sierpinski-Dreieck](./Sierpinski-Dreieck)
 - 2.3 [Regel 30](./Regel-30)
